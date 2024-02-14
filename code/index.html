@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Defense Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="intro">
+            <h1>Welcome to Hacker Defense Game</h1>
+            <button onclick="startGame(); playSound('buttonClickSound')">Start</button>
+            <button onclick="showCredits(); playSound('buttonClickSound')">Credits</button>
+        </div>
+
+        <div id="credits" style="display: none;">
+            <h2>Credits</h2>
+            <p>This game was created by Ruslan Musaev</p>
+            <p>Clicking sound by: <a href="https://freesound.org/people/MattRuthSound/" target="_blank">MattRuthSound</a></p>
+            <p>Background music by: <a href="https://freesound.org/people/Xcreenplay/" target="_blank">Xcreenplay</a></p>
+            <button onclick="hideCredits(); playSound('buttonClickSound')">Back</button>
+        </div>
+
+        <div id="tutorial" style="display: none;">
+            <h2>Tutorial</h2>
+            <p>Fill in the missing parts of the code to defend your company from the hacker attack. You have a time limit, and alarms will blast if you fail. Don't make any mistakes!</p>
+            <button onclick="startLevel(); playSound('buttonClickSound')">Start Tutorial</button>
+        </div>
+
+        <div id="game" style="display: none;">
+            <h2>Level <span id="levelNumber">0</span></h2>
+            <p>Fill in the missing parts:</p>
+            <p>Time Remaining: <span id="timer">0:00</span></p> <!-- Added timer display -->
+            <code id="codeSnippet"></code>
+            <textarea id="codeInput" rows="10" oninput="playSound('typingSound')"></textarea>
+            <button onclick="checkCode(); playSound('buttonClickSound')">Submit</button>
+            <p id="result"></p>
+        </div>
+
+        <div id="gameOver" style="display: none;">
+            <h1>Game Over</h1>
+            <p>You were fired! Better luck next time.</p>
+            <button onclick="restartGame(); playSound('buttonClickSound')">Restart</button>
+        </div>
+        <div id="gameWon" style="display: none;">
+            <h1>Game Won</h1>
+            <p>Congratulations! You defended the company successfully!</p>
+            <button onclick="restartGame(); playSound('buttonClickSound')">Restart</button>
+        </div>
+    </div>
+
+    <audio id="typingSound">
+      <source src="sfx/typing.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="buttonClickSound">
+      <source src="button-click.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="levelWinSound">
+      <source src="level-win.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="gameWinSound">
+      <source src="game-win.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="gameLoseSound">
+      <source src="game-lose.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="hackerSound" loop>
+        <source src="sfx/hacker.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz Discussion</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<p style="color:white;background-color: black;font-size: 2rem;">Sup, this is a documentation for the Quiz project and my personal thoughts about it.
+	<br><br>
+	Separation of Files:
+	As requirement demands, everything is in separate files - html (structure), css (styling) & js (the actual logic)
+	<br><br>
+	Quiz Logic:
+	The javascript file (quiz.js) contains all of the quiz related logic. It has implemented functions for setting up the questions, processing user clicks, providing feedback, and handling quiz finish. It uses canvas to render and adds a graphical aspect/side to the quiz, enhancing the user experience <br>(though, in my case users were probably horrified by the background image xD). Ah yeah and the restart functionality allows users to replay the quiz without refreshing the page (as one of the requirements demanded that).
+	<br><br>
+	Styling stuff:
+	For the fancy look, I played around with the css file (style.css). The background image is glorious and you can not convince me otherwise. Like who doesn’t love a crackhead looking Mike Wazowski staring at them while they are taking the quiz?
+	<br><br>
+	Portfolio integration:
+	There are 2 buttons to go back on the quiz page - one uses a js and other one is just a link. The js one basically just takes the current tab’s history (within a session) and calls the “back()” method. And the back method triggers the browser to go back to the previous page in the tab session history, simulating the effect of clicking the browser's back button (basically). The link one is… just a link, not much to say here xd. On the portfolio itself, the link to the quiz is on the nav menu on top. 
+	<br><br>
+	My group:
+	As you can probably see, the group consists of me, me & me. I worked alone because I thought it would be faster and more convenient. 
+	<br><br>
+	Challenges:
+	<br><br>
+	I don’t have a lot of experience with using canvas so I felt like a caveman sometimes during the development. But I think it went fine and now I have more experience with it.
+	<br><br>
+	To summarise, the project was pretty fun and taught me some neat stuff. 
+	</p>
+	<!-- button to go back to "portfolio" -->
+	<a href="javascript:window.history.back();" style="font-size: 3rem;">Back</a>
+	<br>
+	<!-- Backup button in weird case if user opens this page directly -->
+	<a href="./index.html" style="font-size: 3rem;">(Reliable) Back</a>
+	<br>
+</body>
+</html>

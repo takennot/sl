@@ -1,0 +1,21 @@
+/* Ruslan Musaev */
+
+body {
+    background-image: url('../content/mike.jpg');
+    background-size: cover;
+}
+
+#quizcontainer {
+    width: 550px;
+
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+a {
+    font-size: 3rem;
+}
+/* display set to none to hide this button in the beginning */
+button {
+    display: none;
+}

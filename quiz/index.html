@@ -1,0 +1,31 @@
+<!-- Ruslan Musaev -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<!-- button to go back to "portfolio" -->
+	<a href="javascript:window.history.back();">Back (via js)</a>
+	<br>
+	<!-- Backup button in weird case if user opens this page directly -->
+	<a href="../index.html">Back (via url)</a>
+	<br>
+	<!-- docs -->
+	<a href="./docs.html">Discussion</a>
+	<div id="quizcontainer">
+		<canvas id="quizcanvas" width="550" height="400"></canvas>
+
+		<!-- create a button that has event listener on "onclick". When user clicks button - it runs restartQuiz(). (restartquiz is defined in quiz.js) -->
+		<button onclick="restartQuiz()" id="restartbutton">Restart</button>
+	</div>
+	<!-- Link quiz.js for functionality -->
+	<script src="./quiz.js"></script>
+	<script src="../js/konami.js"></script>
+</body>
+</html>

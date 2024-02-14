@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Math Discussion</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<p style="color:white;background-color: black;font-size: 2rem;">Alright, so this code is all about math. It gives you random questions to solve. Let's break it down:
+	<br><br>
+	Grabbing Elements: We start by grabbing different parts of the webpage using “document.querySelector()” and “document.getElementById()” and storing them in variables.
+	<br><br>
+	Functions: We've got a couple of functions here:
+   	- “getRandomNumbers()”: This one just gives us an array with two whole random numbers between 0 and 9.
+   	- “getRandomEquation(type)”: This function uses “getRandomNumbers()” to create a random math question based on the type you have chosen before (addition, subtraction, or multiplication).
+	<br><br>
+	Event Listeners: These are like idk, spotters, basically just waiting for something to happen:
+   	- “newQuestionButton.onclick”: This one listens for when you click the "Get Question" button. When you do, it gets radio input that is checked and then gets the ID of that radio button which will give us the operation type (add, subtract, multiply), generates a question, and shows it to you. It also clears out any old answer you might have given.
+   	- "submitButton.onclick": This listens for when you click the "Submit" button. When you do, it checks if your answer matches the correct one and gives you feedback with either a thumbs up or a thumbs down.
+   	<br><br>
+	How it Works: So basically, you click on one of the radio buttons (add, subtract or multiply), then press on get equation. After that you type in your answer and click submit. You will either get 👍🏻or 👎🏻 depending on if you are correct or not.
+	</p>
+	<!-- button to go back to "portfolio" -->
+	<a href="javascript:window.history.back();" style="font-size: 3rem;">Back (via js)</a>
+	<br>
+	<!-- Backup button in weird case if user opens this page directly -->
+	<a href="./index.html" style="font-size: 3rem;">Back (via link)</a>
+	<br>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- Ruslan Musaev rumu4402 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Math</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div id="bigdiv">
+			<!-- button to go back to "portfolio" -->
+		<a href="javascript:window.history.back();">Back (via js)</a>
+		<br>
+		<!-- Backup button in weird case if user opens this page directly -->
+		<a href="../index.html">Back (via link)</a>
+		<br>
+		<!-- docs -->
+		<a href="./docs.html">Discussion</a>
+			<div id="type">
+				<p>Type of equation: </p>
+				<input type="radio" name="math" id="addition" checked>
+				<label for="addition">Addition</label>
+				<br>
+				<input type="radio" name="math" id="subtraction">
+				<label for="subtraction">Subtraction</label>
+				<br>
+				<input type="radio" name="math" id="multiplication">
+				<label for="multiplication">Mutiplication</label>
+			</div>
+			<br>
+			<br>
+			<div id="question">
+				<input type="button" id="getQuestion" value="Get equation">
+				<br>
+				<input id="questionField" type="text" readonly>
+				<p>↓</p>
+			</div>
+
+			<br>
+
+			<div id="answer">
+				<input type="text" id="answerField" placeholder="Type the answer">
+				<br>
+				<input type="button" value="Submit" id="submitButton">
+			</div>
+
+			<br>
+
+			<p><span id="check"></span> </p>
+	</div>
+
+	<script src="./math.js"></script>
+	<script src="../js/konami.js"></script>
+</body>
+
+</html>
