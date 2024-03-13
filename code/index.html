@@ -1,3 +1,5 @@
+<!-- rumu4402 Ruslan Musaev -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,33 +10,204 @@
 </head>
 <body>
     <div class="container">
+        <!-- intro div, its just title and start + credits buttons -->
         <div id="intro">
             <h1>Welcome to Hacker Defense Game</h1>
             <button onclick="startGame(); playSound('buttonClickSound')">Start</button>
             <button onclick="showCredits(); playSound('buttonClickSound')">Credits</button>
+            <button onclick="openDiscussion(); playSound('buttonClickSound')">Discussion</button>
         </div>
-
+        <!-- Credits div, nuff said -->
         <div id="credits" style="display: none;">
             <h2>Credits</h2>
             <p>This game was created by Ruslan Musaev</p>
             <p>Clicking sound by: <a href="https://freesound.org/people/MattRuthSound/" target="_blank">MattRuthSound</a></p>
             <p>Background music by: <a href="https://freesound.org/people/Xcreenplay/" target="_blank">Xcreenplay</a></p>
+            <p>Game lose sound by: <a href="https://freesound.org/people/Iceofdoom/" target="_blank">Iceofdoom</a></p>
             <button onclick="hideCredits(); playSound('buttonClickSound')">Back</button>
         </div>
-
+        <!-- Tutorial div, has 4 child divs inside. Each of them for separate subject (num, str, func & misc). -->
         <div id="tutorial" style="display: none;">
-            <h2>Tutorial</h2>
-            <p>Fill in the missing parts of the code to defend your company from the hacker attack. You have a time limit, and alarms will blast if you fail. Don't make any mistakes!</p>
-            <button onclick="startLevel(); playSound('buttonClickSound')">Start Tutorial</button>
-        </div>
+                <div id="number" class="tutorial-section">
+                    <hr>
+                    <h1>Numbers</h1>
+                    <h2>What?</h2>
+                    <p>Numbers represent a... numerical data (shocking). Numbers can be either integers (aka whole numbers) or floats (with a decimal point)</p>
 
+                    <h2>Declaration</h2>
+                    <p>To declare a number in JS, you simply write the number. For example:</p>
+                    <pre>
+                        <code>
+                            let coins = 30; // integer
+                            let speed = 19.99; // float
+                        </code>
+                    </pre>
+
+                    <h2>Math</h2>
+                    <p>In JS we can do quick math - addition (+), subtraction (-), multiplication (*), and division (/). For example:</p>
+                    <pre>
+                        <code>
+                            let sum = 5 + 3; // Addition
+                            let difference = 10 - 4; // Subtraction
+                            let product = 6 * 2; // Multiplication
+                            let quotient = 20 / 5; // Division
+                        </code>
+                    </pre>
+
+                    <h2>Math Advanced</h2>
+                    <p>JS has a built-in Math object that can do advanced math. For example:</p>
+                    <pre>
+                        <code>
+                            let squareRoot = Math.sqrt(25); // Calculates the square root of 25 (returns 5)
+                            let sineValue = Math.sin(Math.PI / 2); // Calculates the sine of π/2 (returns 1)
+                            let result = Math.pow(2, 3); // Calculates 2 in power of 3 (returns 8)
+                        </code>
+                    </pre>
+                    <hr>
+                </div>
+                <div id="string" class="tutorial-section">
+                    <hr>
+                    <h1>Strings</h1>
+                    
+                    <h2>What?</h2>
+                    <p>In JS, a string is a sequence of characters enclosed within single or double quotes. They are used to represent text data.</p>
+                    
+                    <h2>Creating Strings</h2>
+                    <p>You can create a string by enclosing characters within single quotes <code>' '</code> or double quotes <code>" "</code>. For example:</p>
+                    <pre>
+                        <code>
+                            let message1 = 'Hello, world!';
+                            let message2 = "Welcome to JavaScript!";
+                        </code>
+                    </pre>
+                    
+                    <h2>String Length</h2>
+                    <p>To find the length of a string (number of characters), you can use the <code>length</code> property. For example:</p>
+                    <pre>
+                        <code>
+                            let greeting = 'Hello, world!';
+                            let length = greeting.length; // length will be 13
+                        </code>
+                    </pre>
+                    
+                    <h2>String Methods</h2>
+                    <p>JS provides various methods to manipulate strings. Here are some commonly used methods:</p>
+                    <ul>
+                        <li><code>toUpperCase()</code>: Converts the string to uppercase. (Caps Lock on)</li>
+                        <li><code>toLowerCase()</code>: Converts the string to lowercase. (Caps Lock off)</li>
+                        <li><code>charAt()</code>: Returns the character at a specified index. (Start counting from 0 😉)</li>
+                        <li><code>split()</code>: Turns a string into a list of strings based on a specified separator and returns the list. (List = array, purely because reader doesn't know wtf is an array)</li>
+                        <li><code>reverse()</code>: Reverses the order of the elements in a list or the characters in a string and returns the reversed list or string.</li>
+                        <li><code>join()</code>: Joins all elements of a list into a string and returns the string. You can specify an optional separator to separate the elements.</li>
+                    </ul>
+
+                    <h2>Examples</h2>
+                    <pre>
+                        <code>
+                            let str = 'Hello, world!';
+                            let upperCaseStr = str.toUpperCase();
+                            let charAtIndex = str.charAt(7);
+
+                            // split()
+                            let sentence = "Hello, world!";
+                            let words = sentence.split(' '); // result is ['Hello,', 'world!']
+
+                            // reverse()
+                            let letters = ['H', 'e', 'l', 'l', 'o'];
+                            letters.reverse(); // ['o', 'l', 'l', 'e', 'H']
+
+                            // join()
+                            let fruits = ['apple', 'banana', 'orange'];
+                            let fruitString = fruits.join(', '); // 'apple, banana, orange'
+                        </code>
+                    </pre>
+                    <hr>
+                </div>
+                <div id="function" class="tutorial-section">
+                    <hr>
+                        <h1>Functions</h1>
+
+                        <h2>What?</h2>
+                        <p>A function is a block of reusable code that performs a specific task. Imagine a dude that will do whatever you will tell him to do and you can tell him go wherever and do his thing there.</p>
+
+                        <h2>Declaration</h2>
+                        <p>In JS, you can declare a function using the <code>function</code> keyword, followed by the function name and parentheses.</p>
+                        <pre>
+                            <code>
+                                function greet() {
+                                    console.log("Hello, world!");
+                                }
+                            </code>
+                        </pre>
+
+                        <h2>Call</h2>
+                        <p>To execute / run a function, you simply need to "call" it by using its name followed by parentheses.</p>
+                        <pre>
+                            <code>
+                                greet();
+                            </code>
+                        </pre>
+
+                        <h2>Parameters and Arguments</h2>
+                        <p>Functions can accept inputs called parameters. You can specify parameters inside the parentheses when declaring a function.</p>
+                        <pre>
+                            <code>
+                                function greet(name) {
+                                    console.log("Hello, " + name + "!");
+                                }
+                            </code>
+                        </pre>
+                        <p>When calling the function, you provide specific values called arguments for each parameter.</p>
+                        <pre>
+                            <code>
+                                greet("John");
+                            </code>
+                        </pre>
+
+                        <h2>Return Statement</h2>
+                        <p>Functions can also return values using the <code>return</code> statement. This allows the function to produce an output that can be used elsewhere in your code.</p>
+                        <pre>
+                            <code>
+                                function add(a, b) {
+                                    return a + b;
+                                }
+
+                                let result = add(3, 5);
+                                console.log(result); // Output: 8
+                            </code>
+                        </pre>
+                        <hr>
+                </div>
+                <div id="misc" class="tutorial-section">
+                    <hr>
+                    <h2>Misc Info</h2>
+                    <ul>
+                        <li><mark><i><b>No mistakes!</b></i></mark></li>
+                        <li><mark><i><b>Google is your best friend!</b></i></mark></li>
+                        <li>Most of the answers are in the form of <mark><i><b><code>return xyz;</code></b></i></mark></li>
+                        <li>You <mark><i><b>must write semicolons!</b></i></mark></li>
+                        <li><mark><i><b>Be careful, <code>}</code> is already written!</b></i></mark></li>
+                    </ul>
+                    <br>
+                    <button style="position: absolute; bottom: 10px; left: 40%; transform: translateX(-50%);" onclick="backToTitle(); playSound('buttonClickSound')">Back</button>
+                    <button style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);" onclick="startLevel(); playSound('buttonClickSound')">Start the game</button>
+
+                </div>
+        </div>
+        <!-- The level "template" itself -->
         <div id="game" style="display: none;">
             <h2>Level <span id="levelNumber">0</span></h2>
             <p>Fill in the missing parts:</p>
-            <p>Time Remaining: <span id="timer">0:00</span></p> <!-- Added timer display -->
+            <p>Time Remaining: <span id="timer">0:00</span></p>
             <code id="codeSnippet"></code>
+            <!-- this text area where user will input code - it will play sound whenever user inputs something in it -->
             <textarea id="codeInput" rows="10" oninput="playSound('typingSound')"></textarea>
+            <p>}</p>
             <button onclick="checkCode(); playSound('buttonClickSound')">Submit</button>
+            <!-- little secret ;) -->
+            <div id="completeLevelButton">
+                <button onclick="completeLevel(); playSound('buttonClickSound')">Complete Level</button>
+            </div>
             <p id="result"></p>
         </div>
 
@@ -45,29 +218,92 @@
         </div>
         <div id="gameWon" style="display: none;">
             <h1>Game Won</h1>
-            <p>Congratulations! You defended the company successfully!</p>
+            <p>Congratulations! You defended the company successfully! You get... nothing! 🎉🎉</p>
             <button onclick="restartGame(); playSound('buttonClickSound')">Restart</button>
         </div>
+        <div id="discussion" style="display: none;">
+            <h1>Discussion</h1>
+            <p>This project is a really wonky and unreliable way to teach someone programming concepts but it works. Basically it takes input from the user as a string and after some normalizing - it compares it with the string from the answers array. All that while trying to overload the user with sounds and a flashing timer.
+            <br>
+            <br>
+            Game Logic: Core functionality is just showing parts of code to the user and comparing their input to the string that is inside of the answers array.
+            <br>
+            <br>
+            Timer: Because I want users to be stressed and distracted, there is a timer mechanic. It uses JS’s setInterval() function. Every level it resets to 60 seconds, starts countdown and if it reaches 0 - it will call the gameOver() method.
+            <br>
+            <br>
+            UI: 60% of the UI effort went to the “Tutorial” page, 25% went to level UI, 5% is to the rest of the project hehehe. Tutorial is just 4 divs, at every corner, each div is scrollable and covers a separate subject. It took so long to position these divs and make them look somewhat nice. Level UI took some time too - as a result, it's a pretty neat textbox with a question, timer, level name and some buttons.
+            <br>
+            <br>
+            Interactive Learning: Game forces users to remember and learn the programming concepts (JS oriented tho) by engaging them in coding challenges and giving them no chance to make a mistake. This game was designed to fail the first 16 playthroughs or so. Because of that, users will keep repeating the same levels, keep re-reading the tutorial, thus remembering stuff. Also keep re-typing the same stuff. As a result, user will get good programming concepts (or not)
+            <br>
+            <br>
+            Timed Challenges: Because of the time-limited levels, the game simulates real-world scenarios when your boss gives you an unrealistic deadline because he doesn’t understand anything in time management. So it is a long term investment, because this game’s user will already be used to these kinds of situations. The user will be able to make quick decisions and be able to google super quick, thus the ability to work under pressure will be just 💪🏻💪🏻
+            <br>
+            <br>
+            Increasing Difficulty: Sooo, the game gets really difficult at the end (for a beginner and average JS user). As a result, only the strongest people will be able to finish the game. Survival of the strongest, you know. On a serious note, it is better to expose easier levels at the beginning to not discourage the users and help them build up confidence. And only then expose them to harder levels.
+            <br>
+            <br>
+            ARCS:
+            <br>
+            <br>
+            1. Attention: This game captures the user's attention with flashing timers, clicking sounds, action feedbacks, music, sounds etc.
+            <br>
+            <br>
+            2. Relevance: User want to learn or at least experience programming? No problem, here are real-life programming scenarios - easy relevance. Users are literally writing code, it can't get more relevant than that.
+            <br>
+            <br>
+            3. Confidence: The game slowly builds up confidence by presenting easier levels first, and then giving harder ones (so that they feel ready to do them), and then completely crushing it by presenting questions that make no sense. 
+            <br>
+            <br>
+            4. Satisfaction: Well, there is no satisfaction in real-life programming, so this is as close as it gets to it. But to be fair, I think anyone who wins this game will be pretty satisfied because the human brain is simple - “Game win = ooga booga dopamine go brrr”. Especially because it is quite hard to finish and they will need multiple tries to do so. So imagine struggling for a long time and then finally finishing that. And to top it off - game winning sounds are playing, so even more satisfaction.
+            <br>
+            <br>
+            Self-Determination Theory (SDT):
+            <br>
+            <br>
+            1. Intrinsic Motivation: The game relies on satisfaction that is derived from finishing levels to provide motivation to finish the game. So there are no external rewards such as badges, points etc.
+            <br>
+            <br>
+            2. Autonomy: As autonomous as it gets - except for two aspects. Time and correct answer. Due to the implementation, users will need to be quite precise with their answers. And the timer somewhat limits the time to finish the level. But only “somewhat” because the user has unlimited tries.
+            <br>
+            <br>
+            3. Competence: Users start with easier stuff, and go to harder levels. That means that users get more competent as the game goes on. If they don't, they will keep trying because that's the only way to finish the game. 
+            <br>
+            <br>
+            Flow Theory:
+            <br>
+            <br>
+            1. Clear Goals and Feedback: Clear goals - write code. Immediate feedback - type, click, “loser”, winning level sounds. Same thing as Attention, gets their focus. 
+            <br>
+            <br>
+            2. Balance of Challenge and Skill: No balance. Or one COULD argue that easy levels first, then harder bla bla bla, which technically would fit under the balance, but eh.
+            <br>
+            <br>
+            3. Focused Attention: Just re-read Attention in ARCS.
+            </p>
+            <button onclick="closeDiscussion(); playSound('buttonClickSound')">Back</button>
+        </div>
     </div>
-
+<!-- sounds -->
     <audio id="typingSound">
       <source src="sfx/typing.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id="buttonClickSound">
-      <source src="button-click.mp3" type="audio/mpeg">
+      <source src="sfx/click.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id="levelWinSound">
-      <source src="level-win.mp3" type="audio/mpeg">
+      <source src="sfx/levelwin.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id="gameWinSound">
-      <source src="game-win.mp3" type="audio/mpeg">
+      <source src="sfx/gamewin.ogg" type="audio/ogg">
       Your browser does not support the audio element.
     </audio>
     <audio id="gameLoseSound">
-      <source src="game-lose.mp3" type="audio/mpeg">
+      <source src="sfx/game_lose.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id="hackerSound" loop>

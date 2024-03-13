@@ -1,21 +1,23 @@
-/* Global styles */
+/* rumu4402 Ruslan Musaev */
+/* for body and container - setting up "global" styles, centering stuff etc */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     margin: 0;
     padding: 0;
     color: #ffffff;
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-    min-height: 100vh; /* Ensure full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
+
 
 h1, h2 {
     color: #007bff;
@@ -35,17 +37,9 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Header styles */
-header {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 /* Game styles */
 #game, #gameOver, #gameWon {
-    background-color: #1e1e1e; /* Dark background color */
+    background-color: #1e1e1e;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -53,11 +47,11 @@ header {
 
 #codeSnippet {
     font-family: 'Courier New', Courier, monospace;
-    color: #ffffff; /* Adjusted text color to white */
+    color: #ffffff;
 }
 
 textarea {
-    width: calc(100% - 22px); /* Adjusted width to accommodate the padding */
+    width: calc(100% - 22px);
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -72,19 +66,115 @@ textarea {
     font-weight: bold;
 }
 
-/* Timer styles */
+/* Timer */
 #timer {
     font-size: 24px;
     font-weight: bold;
-    color: #ff0000; /* Red color */
+    color: #ff0000;
     background-color: #007bff;
     padding: 5px 10px;
     border-radius: 5px;
-    animation: blink 1s infinite; /* Flashing animation */
+    animation: blink 0.5s infinite; /* Flashing */
 }
 
 @keyframes blink {
     50% {
         opacity: 0;
     }
+}
+
+#completeLevelButton {
+    display: none;
+}
+
+/* tutorial related */
+/* idk what even is going on here xd */
+
+#tutorial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.tutorial-section {
+    padding: 20px;
+    width: calc(50% - 40px);
+    max-height: calc(50vh);
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5, 5, 0, 5;
+}
+
+.tutorial-section h1 {
+    color: #007bff;
+    text-align: center;
+}
+
+#number, #string, #function, #misc {
+    width: calc(50vw - 20px);
+    height: calc(50vh - 20px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+#number {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#string {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#function {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#misc {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Scrollbar */
+
+/* Width */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar handle on hover */
+}
+
+/* wanna make code parts a little bigger */
+code {
+    font-size: 1.2em;
 }
